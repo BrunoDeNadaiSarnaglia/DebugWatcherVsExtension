@@ -11,7 +11,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "*"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -27,7 +27,8 @@
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "install-local": "rm -rf ~/.vscode/extensions/debug-watch-cs-extension/ && cp -r ./ ~/.vscode/extensions/debug-watch-cs-extension"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
@@ -35,5 +36,9 @@
         "tslint": "^5.8.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "@types/sleep": "0.0.7",
+        "sleep": "^5.1.1"
     }
 }
