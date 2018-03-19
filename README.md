@@ -1,65 +1,33 @@
-# leetcodesubmit README
+# Livereload Debugger README
 
-This is the README for your extension "leetcodesubmit". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+This extensions aims to restart debugger by listening to changes in some directory. This is especially helpful when your code flow already includes some kind of livereload behavior, for instance nodemon
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+You must have at least one debugger already configured inside ${workspace}/.vscode/launch.json
 
-## Extension Settings
+## How to use
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Inside ${workspace}/.vscode/debug-watch.json must be a json containing the following configuration
 
-For example:
+```js
+{
+    "debugTask": "Extension", // Name of the debugger you want to launch, this field should match with launch.json
+    "watchFolders": [ // Path containing the folders it will listen for changes
+        "src"
+    ],
+    "delay": 1000 // Delay to launch the debugger after the change event was triggered
+},
+```
 
-This extension contributes the following settings:
+## Compile
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+```js
+npm run compile
+```
 
-## Known Issues
+## Install locally in ~/.vscode/extensions
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+```js
+npm run install-local
+```
