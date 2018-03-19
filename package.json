@@ -1,9 +1,9 @@
 {
-    "name": "leetcodesubmit",
-    "displayName": "LeetCodeSubmit",
-    "description": "Submit codes to leetcode",
+    "name": "livereloaddebugger",
+    "displayName": "Livereload Debugger",
+    "description": "Livereload Debugger",
     "version": "0.0.1",
-    "publisher": "ASd",
+    "publisher": "Bruno De Nadai Sarnaglia",
     "engines": {
         "vscode": "^1.21.0"
     },
@@ -17,8 +17,8 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.debug.watch",
+                "title": "Livereload Debugger"
             }
         ]
     },
